@@ -1,13 +1,9 @@
 package com.example.assignment_cfg_example;
 
-import com.example.assignment_cfg_example.config.Config;
-import com.example.assignment_cfg_example.model.Penguin;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -15,19 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class EndpointController {
 
     @Autowired
-    private Config config;
+    private OtterRepository otterRepository;
 
-    @GetMapping("/getPenguin")
-    public ResponseEntity<String> getPenguin(@RequestParam String name, @RequestHeader(value = "membership-id") String membershipId){
-        log.info("/getPenguin accessed");
-        log.debug("name supplied: " + name);
-        log.info("Membership calling: " + membershipId);
-
-        Penguin penguin = new Penguin(name, "Black & White");
-        String message = config.getMessage();
-
-        return ResponseEntity.ok(penguin.toString() + " MESSAGE: " + message);
+    @GetMapping("/getOtter")
+    public ResponseEntity<String> getOtter(){
+        String name = otterRepository.findAll().getFirst().getName();
+        return ResponseEntity.ok(name);
     }
-//    http://localhost:8080/getPenguin?name=percy + headers
-
 }
