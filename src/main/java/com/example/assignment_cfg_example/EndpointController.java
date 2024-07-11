@@ -1,5 +1,6 @@
 package com.example.assignment_cfg_example;
 
+import com.example.assignment_cfg_example.model.Otter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ public class EndpointController {
     @GetMapping("/getOtter")
     public ResponseEntity<String> getOtter(){
         String name = otterRepository.findAll().getFirst().getName();
+//        Otter otter = otterRepository.findAll().getFirst();
         return ResponseEntity.ok(name);
     }
 }
