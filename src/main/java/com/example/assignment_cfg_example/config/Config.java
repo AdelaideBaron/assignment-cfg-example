@@ -1,4 +1,4 @@
-package com.example.assignment_cfg_example;
+package com.example.assignment_cfg_example.config;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
