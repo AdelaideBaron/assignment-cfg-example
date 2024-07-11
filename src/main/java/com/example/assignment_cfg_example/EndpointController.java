@@ -16,9 +16,22 @@ public class EndpointController {
         log.info("/getPenguin accessed");
         log.debug("name supplied: " + name);
         log.info("Membership calling: " + membershipId);
-        return ResponseEntity.ok("penguin called: " + name);
+
+        Penguin penguin = new Penguin(name, "Black & White");
+
+
+        return ResponseEntity.ok(penguin.toString());
     }
 //    http://localhost:8080/getPenguin?name=percy + headers
+
+//    Penguin(name=percy, colour=Black & White)
+    // key: value
+
+    // might want a response more like the following
+//{
+//    "name": "penguin",
+//    "colour": xyz
+//}
 
 
 
