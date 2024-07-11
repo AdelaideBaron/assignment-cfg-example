@@ -1,0 +1,4 @@
+spring:
+  application:
+    name: "assignment-cfg-example"
+    setApiMessage: "thanks for using my api"
