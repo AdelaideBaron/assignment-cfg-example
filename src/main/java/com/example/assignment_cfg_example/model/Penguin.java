@@ -1,4 +1,4 @@
-package com.example.assignment_cfg_example;
+package com.example.assignment_cfg_example.model;
 
 import lombok.AllArgsConstructor;
 import lombok.ToString;
