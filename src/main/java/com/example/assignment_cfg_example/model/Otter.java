@@ -10,7 +10,7 @@ public class Otter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Long id;
 
     @Column(name = "name")
     private String name;
@@ -19,8 +19,8 @@ public class Otter {
     private String species;
 
     @Column(name = "age")
-    private int age;
+    private Integer age;
 
     @Column(name = "weight")
-    private double weight;
+    private Double weight;
 }
