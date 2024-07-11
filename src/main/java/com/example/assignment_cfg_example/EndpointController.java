@@ -1,5 +1,7 @@
 package com.example.assignment_cfg_example;
 
+import com.example.assignment_cfg_example.config.Config;
+import com.example.assignment_cfg_example.model.Penguin;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
